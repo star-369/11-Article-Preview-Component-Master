@@ -1,0 +1,92 @@
+@use "../abstracts/mixins" as *;
+
+.card {
+  background: white;
+  border-radius: 0.5rem;
+  // 336px
+  width: 21rem;
+  font-family: var(--manrope);
+  overflow: hidden;
+  // shadow by css scan #1
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  @include breakpoints(medium) {
+    display: flex;
+    // 700px
+    width: 43.75rem;
+    overflow: visible;
+  }
+
+  &__image {
+    // 208px
+    height: 13rem;
+    background: url(images/drawers.jpg);
+    background-size: cover;
+    @include breakpoints(medium) {
+      // 280px
+      // height: 17.5rem;
+      height: 296px;
+      width: 40%;
+      overflow: hidden;
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+  }
+  &__description {
+    @include breakpoints(medium) {
+      width: 60%;
+    }
+  }
+  &__text {
+    padding: 2rem 2rem 0;
+    p:nth-child(1) {
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: var(--very-dark-grayish-blue);
+    }
+    p:nth-child(2) {
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      color: var(--desaturated-dark-blue);
+    }
+  }
+  &__profile {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    padding: 0 2rem 1rem;
+    img {
+      align-self: center;
+      height: 2.5rem;
+      border-radius: 9999px;
+    }
+    &__username > p:nth-child(1) {
+      font-weight: 700;
+      color: var(--very-dark-grayish-blue);
+    }
+    &__username > p:nth-child(2) {
+      font-weight: 500;
+      color: var(--desaturated-dark-blue);
+    }
+    label {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      margin-left: auto;
+      padding: 10px;
+      align-self: flex-end;
+      border-radius: 9999px;
+      background: var(--light-grayish-blue);
+    }
+    input[type="checkbox"] {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      right: 1.5rem;
+      top: 0.5rem;
+      z-index: 10;
+      opacity: 0;
+    }
+    @include breakpoints(medium) {
+      padding: 0 2rem 2rem;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@use "../abstracts/mixins" as *;
+body {
+  @include grid-center;
+  background: var(--light-grayish-blue);
+  padding: 4rem 0;
+  @include breakpoints(medium) {
+    padding: 0;
+  }
+}
